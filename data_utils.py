@@ -1,11 +1,14 @@
+import os
+from collections import defaultdict
+
 import torch
 import torch.nn.functional as F
 import numpy as np
-from collections import defaultdict
 from scipy import sparse as sp
-from sklearn.metrics import roc_auc_score
-from torch_sparse import SparseTensor
+from sklearn.metrics import roc_auc_score, f1_score
 
+from torch_sparse import SparseTensor
+from google_drive_downloader import GoogleDriveDownloader as gdd
 
 def rand_train_test_idx(label, train_prop=.5, valid_prop=.25, ignore_negative=True):
     """ randomly splits label into train/valid/test splits """
@@ -217,6 +220,12 @@ def load_fixed_splits(dataset, sub_dataset):
     name = dataset
     if sub_dataset:
         name += f'-{sub_dataset}'
+
+    if not os.path.exists(f'./data/splits/{name}-splits.npy'):
+        assert dataset in splits_drive_url.keys()
+        gdd.download_file_from_google_drive(
+            file_id=splits_drive_url[dataset], \
+            dest_path=f'./data/splits/{name}-splits.npy', showsize=True) 
     
     splits_lst = np.load(f'./data/splits/{name}-splits.npy', allow_pickle=True)
     for i in range(len(splits_lst)):
@@ -232,4 +241,7 @@ dataset_drive_url = {
     'yelp-chi': '1fAXtTVQS4CfEk4asqrFw9EPmlUPGbGtJ', 
 }
 
-
+splits_drive_url = {
+    'snap-patents' : '12xbBRqd8mtG_XkNLH8dRRNZJvVM4Pw-N', 
+    'pokec' : '1ZhpAiyTNc0cE_hhgyiqxnkKREHK7MK-_', 
+}
