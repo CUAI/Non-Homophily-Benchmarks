@@ -12,7 +12,7 @@ Here are the codes accompanying our paper. There are codes to load our proposed 
 `homophily.py` contains functions for computing homophily measures, including the one that we introduce in `our_measure`.
 
 ### Datasets
-As discussed in the paper, our proposed datasets are "twitch-e", "yelp-chi", "deezer", "fb100", "pokec", "ogbn-proteins", "arxiv-year", and "snap-patents", which can be loaded by `load_nc_dataset` in `dataset.py` by passing in their respective string name. Many of these datasets are included in the `data/` directory, but yelp-chi, snap-patents, and pokec are automatically downloaded from a Google drive link when loaded from `dataset.py`. The arxiv-year and ogbn-proteins datasets are downloaded using OGB downloaders. `load_nc_dataset` returns an NCDataset, the documentation for which is also provided in `dataset.py`. It is functionally equivalent to OGB's Library-Agnostic Loader for Node Property Prediction, except for the fact that it returns torch tensors. See the [OGB website](https://ogb.stanford.edu/docs/nodeprop/) for more specific documentation. Just like the OGB function, dataset.get_idx_split() returns fixed dataset split for training, validation, and testing. 
+As discussed in the paper, our proposed datasets are "twitch-e", "yelp-chi", "deezer", "fb100", "pokec", "ogbn-proteins", "arxiv-year", and "snap-patents", which can be loaded by `load_nc_dataset` in `dataset.py` by passing in their respective string name. Many of these datasets are included in the `data/` directory, but due to their size, yelp-chi, snap-patents, and pokec are automatically downloaded from a Google drive link when loaded from `dataset.py`. The arxiv-year and ogbn-proteins datasets are downloaded using OGB downloaders. `load_nc_dataset` returns an NCDataset, the documentation for which is also provided in `dataset.py`. It is functionally equivalent to OGB's Library-Agnostic Loader for Node Property Prediction, except for the fact that it returns torch tensors. See the [OGB website](https://ogb.stanford.edu/docs/nodeprop/) for more specific documentation. Just like the OGB function, `dataset.get_idx_split()` returns fixed dataset split for training, validation, and testing. 
 
 When there are multiple graphs (as in the case of twitch-e and fb100), different ones can be loaded by passing in the `sub_dataname` argument to `load_nc_dataset` in `dataset.py`.
 
@@ -27,7 +27,7 @@ fb100 consists of 100 graphs. We only include ["Amherst41", "Cornell5", "Johns H
 1. Create and activate a new conda environment using python=3.8 (i.e. `conda create --name non-hom python=3.8`) 
 2. Activate your conda environment
 3. Check CUDA version using `nvidia-smi` 
-4. run `bash install.sh cu110`, replacing cu110 with your CUDA version (CUDA 11 -> cu110, CUDA 10.2 -> cu102, CUDA 10.1 -> cu101). We tested on Ubuntu 18.04, CUDA 11.0.
+4. In the root directory of this repository, run `bash install.sh cu110`, replacing cu110 with your CUDA version (i.e. UDA 11 -> cu110, CUDA 10.2 -> cu102, CUDA 10.1 -> cu101). We tested on Ubuntu 18.04, CUDA 11.0.
 
 
 ## Running experiments
