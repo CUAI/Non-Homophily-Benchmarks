@@ -7,7 +7,7 @@ Here are the codes accompanying our paper. There are codes to load our proposed 
 
 `dataset.py` loads our datasets.
 
-`models.py` (*Coming Soon*) contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) and GPRGNN (`gprgnn.py`) are in separate files. Also, `ogbn-proteins` contains code for running GCN and GCN+JK on ogbn-proteins. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
+`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) is in separate files. Also, `ogbn-proteins` contains code for running GCN and GCN+JK on ogbn-proteins. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
 
 `homophily.py` contains functions for computing homophily measures, including the one that we introduce in `our_measure`.
 
