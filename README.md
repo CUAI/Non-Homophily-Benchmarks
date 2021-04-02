@@ -1,9 +1,13 @@
 ## New Benchmarks for Learning on Non-Homophilous Graphs
 
-Here are the codes accompanying our paper. There are codes to load our proposed datasets, compute our measure of homophily, and train various graph machine learning models in our experimental setup.
+Here are the codes and datasets accompanying the paper: *New Benchmarks for Learning on Non-Homophilous Graphs*
+Derek Lim, Xiuyu Li, Felix Hohne, and Ser-Nam Lim.
+Workshop on Graph Learning Benchmarks, WWW 2021.
+
+ There are codes to load our proposed datasets, compute our measure of the presence of homophily, and train various graph machine learning models in our experimental setup.
 
 ### Organization
-`main.py` (*Coming Soon*) contains the main experimental scripts.
+`main.py` contains the main experimental scripts.
 
 `dataset.py` loads our datasets.
 
