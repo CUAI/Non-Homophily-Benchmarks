@@ -29,7 +29,7 @@ twitch-e consists of seven graphs ["DE", "ENGB", "ES", "FR", "PTBR", "RU", "TW"]
 
 fb100 consists of 100 graphs. We only include ["Amherst41", "Cornell5", "Johns Hopkins55", "Penn94", "Reed98"] in this repo, although others may be downloaded from [the internet archive](https://archive.org/details/oxford-2005-facebook-matrix). In the paper we test on Penn94.
 
-
+![Alt text](https://user-images.githubusercontent.com/58995473/113487966-18a79b80-9489-11eb-91cf-0d5c73ebdef3.png "Dataset Compatibility Matrices")
 
 ### Installation instructions
 
