@@ -1,6 +1,7 @@
 ## New Benchmarks for Learning on Non-Homophilous Graphs
 
-Here are the codes and datasets accompanying the paper: *New Benchmarks for Learning on Non-Homophilous Graphs*  
+Here are the codes and datasets accompanying the paper:  
+*New Benchmarks for Learning on Non-Homophilous Graphs*  
 Derek Lim (Cornell), Xiuyu Li (Cornell), Felix Hohne (Cornell), and Ser-Nam Lim (Facebook AI).  
 Workshop on Graph Learning Benchmarks, WWW 2021.
 
@@ -11,7 +12,7 @@ Workshop on Graph Learning Benchmarks, WWW 2021.
 
 `dataset.py` loads our datasets.
 
-`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) is in separate files. Also, `ogbn-proteins` contains code for running GCN and GCN+JK on ogbn-proteins. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
+`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) is in separate files. Also, `ogbn-proteins.py` contains code for running GCN and GCN+JK on ogbn-proteins. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
 
 `homophily.py` contains functions for computing homophily measures, including the one that we introduce in `our_measure`.
 
@@ -31,10 +32,10 @@ fb100 consists of 100 graphs. We only include ["Amherst41", "Cornell5", "Johns H
 1. Create and activate a new conda environment using python=3.8 (i.e. `conda create --name non-hom python=3.8`) 
 2. Activate your conda environment
 3. Check CUDA version using `nvidia-smi` 
-4. In the root directory of this repository, run `bash install.sh cu110`, replacing cu110 with your CUDA version (i.e. UDA 11 -> cu110, CUDA 10.2 -> cu102, CUDA 10.1 -> cu101). We tested on Ubuntu 18.04, CUDA 11.0.
+4. In the root directory of this repository, run `bash install.sh cu110`, replacing cu110 with your CUDA version (i.e. CUDA 11 -> cu110, CUDA 10.2 -> cu102, CUDA 10.1 -> cu101). We tested on Ubuntu 18.04, CUDA 11.0.
 
 
 ## Running experiments
 
 1. Make sure a results folder exists in the root directory. 
-2. Our experiments are in the `experiments/` directory. There are bash scripts for running methods on single and multiple datasets. Please note that the experiments must be run from the root directory, e.g. (`bash experiments/mixhop_exp.sh snap-patents`)
+2. Our experiments are in the `experiments/` directory. There are bash scripts for running methods on single and multiple datasets. Please note that the experiments must be run from the root directory, e.g. `bash experiments/mixhop_exp.sh snap-patents`. Some datasets require specifying a second `sub_dataset` argument e.g. `bash experiments/mixhop_exp.sh twitch-e DE`.
