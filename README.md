@@ -12,7 +12,7 @@ Workshop on Graph Learning Benchmarks, WWW 2021.
 
 `dataset.py` loads our datasets.
 
-`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) is in separate files. Also, `ogbn-proteins.py` contains code for running GCN and GCN+JK on ogbn-proteins. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
+`models.py` contains implementations for graph machine learning models, though C&S (`correct_smooth.py`, `cs_tune_hparams.py`) is in separate files. Also, `gcn-ogbn-proteins.py` contains code for running GCN and GCN+JK on ogbn-proteins. Running several of the GNN models on larger datasets may require at least 24GB of VRAM. 
 
 `homophily.py` contains functions for computing homophily measures, including the one that we introduce in `our_measure`.
 
