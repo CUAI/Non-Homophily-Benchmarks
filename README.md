@@ -3,7 +3,8 @@
 Here are the codes and datasets accompanying the paper:  
 *New Benchmarks for Learning on Non-Homophilous Graphs*  
 Derek Lim (Cornell), Xiuyu Li (Cornell), Felix Hohne (Cornell), and Ser-Nam Lim (Facebook AI).  
-Workshop on Graph Learning Benchmarks, WWW 2021.
+Workshop on Graph Learning Benchmarks, WWW 2021.  
+[[PDF link](https://graph-learning-benchmarks.github.io/assets/papers/Non_Homophilous_Camera_Ready.pdf)]
 
  There are codes to load our proposed datasets, compute our measure of the presence of homophily, and train various graph machine learning models in our experimental setup.
 
@@ -38,4 +39,15 @@ fb100 consists of 100 graphs. We only include ["Amherst41", "Cornell5", "Johns H
 ## Running experiments
 
 1. Make sure a results folder exists in the root directory. 
-2. Our experiments are in the `experiments/` directory. There are bash scripts for running methods on single and multiple datasets. Please note that the experiments must be run from the root directory, e.g. `bash experiments/mixhop_exp.sh snap-patents`. Some datasets require specifying a second `sub_dataset` argument e.g. `bash experiments/mixhop_exp.sh twitch-e DE`.
+2. Our experiments are in the `experiments/` directory. There are bash scripts for running methods on single and multiple datasets. Please note that the experiments must be run from the root directory. For instance, to run the MixHop experiments on snap-patents, use: 
+```
+bash experiments/mixhop_exp.sh snap-patents
+```
+Some datasets require specifying a second `sub_dataset` argument e.g. to run MixHop experiments on the twitch-e, DE sub_dataset, do: 
+```
+bash experiments/mixhop_exp.sh twitch-e DE
+```
+Otherwise, run `python main.py --help` to see the full list of options for running experiments. As one example, to train a GAT with max jumping knowledge connections on (directed) arxiv-year with 32 hidden channels and 4 attention heads, run:
+```
+python main.py --dataset arxiv-year --method gatjk --hidden_channels 32 --gat_heads 4 --directed
+```
