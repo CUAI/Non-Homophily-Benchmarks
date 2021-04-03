@@ -18,6 +18,9 @@ Workshop on Graph Learning Benchmarks, WWW 2021.
 `homophily.py` contains functions for computing homophily measures, including the one that we introduce in `our_measure`.
 
 ### Datasets
+
+![Alt text](https://user-images.githubusercontent.com/58995473/113487776-f3665d80-9487-11eb-8035-fbf5126f85df.png "Our Datasets")
+
 As discussed in the paper, our proposed datasets are "twitch-e", "yelp-chi", "deezer", "fb100", "pokec", "ogbn-proteins", "arxiv-year", and "snap-patents", which can be loaded by `load_nc_dataset` in `dataset.py` by passing in their respective string name. Many of these datasets are included in the `data/` directory, but due to their size, yelp-chi, snap-patents, and pokec are automatically downloaded from a Google drive link when loaded from `dataset.py`. The arxiv-year and ogbn-proteins datasets are downloaded using OGB downloaders. `load_nc_dataset` returns an NCDataset, the documentation for which is also provided in `dataset.py`. It is functionally equivalent to OGB's Library-Agnostic Loader for Node Property Prediction, except for the fact that it returns torch tensors. See the [OGB website](https://ogb.stanford.edu/docs/nodeprop/) for more specific documentation. Just like the OGB function, `dataset.get_idx_split()` returns fixed dataset split for training, validation, and testing. 
 
 When there are multiple graphs (as in the case of twitch-e and fb100), different ones can be loaded by passing in the `sub_dataname` argument to `load_nc_dataset` in `dataset.py`.
