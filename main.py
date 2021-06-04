@@ -147,7 +147,11 @@ for run in range(args.runs):
         logger.add_result(run, result[:-1])
 
         if result[1] > best_val:
-            best_out = F.log_softmax(result[-1], dim=1)
+            best_val = result[1]
+            if args.dataset != 'ogbn-proteins':
+                best_out = F.softmax(result[-1], dim=1)
+            else:
+                best_out = result[-1]
 
         if epoch % args.display_step == 0:
             print(f'Epoch: {epoch:02d}, '
