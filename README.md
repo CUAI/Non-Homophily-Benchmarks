@@ -54,3 +54,15 @@ Otherwise, run `python main.py --help` to see the full list of options for runni
 ```
 python main.py --dataset arxiv-year --method gatjk --hidden_channels 32 --gat_heads 4 --directed
 ```
+
+
+## Cite
+If you use this code or our results in your research, please cite:
+```
+@article{lim2021new,
+  title={New Benchmarks for Learning on Non-Homophilous Graphs},
+  author={Lim, Derek and Li, Xiuyu and Hohne, Felix and Lim, Ser-Nam},
+  journal={arXiv preprint arXiv:2104.01404},
+  year={2021}
+}
+```
