@@ -1,5 +1,7 @@
 ## New Benchmarks for Learning on Non-Homophilous Graphs
 
+**Update: we have extended this work in a NeurIPS 2021 paper focused on large scale graph learning, see our new work at [arXiv:2110.14446](https://arxiv.org/abs/2110.14446), and see the new datasets and code in the repo [Non-Homophily-Large-Scale](https://github.com/CUAI/Non-Homophily-Large-Scale).**
+
 Here are the codes and datasets accompanying the paper:  
 *New Benchmarks for Learning on Non-Homophilous Graphs*  
 Derek Lim (Cornell), Xiuyu Li (Cornell), Felix Hohne (Cornell), and Ser-Nam Lim (Facebook AI).  
